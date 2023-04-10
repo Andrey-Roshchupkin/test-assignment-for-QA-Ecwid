@@ -1,0 +1,60 @@
+<!-- Supported values for the data-layout parameter:
+        SMALL_ICON
+        SMALL_ICON_COUNTER
+        COUNTER_ONLY
+        TITLE_COUNTER
+        MEDIUM_ICON_COUNTER
+        MEDIUM_ICON_TITLE_COUNTER
+        BIG_ICON_TITLE_SUBTOTAL
+        BIG_ICON_DETAILS_SUBTOTAL -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div data-layout="BIG_ICON_DETAILS_SUBTOTAL" class="ec-cart-widget"></div>
+    <script>
+      const bag = document.querySelector(".ec-cart-widget");
+      const parameters = [
+        "SMALL_ICON",
+        "SMALL_ICON_COUNTER",
+        "COUNTER_ONLY",
+        "TITLE_COUNTER",
+        "MEDIUM_ICON_COUNTER",
+        "MEDIUM_ICON_TITLE_COUNTER",
+        "BIG_ICON_TITLE_SUBTOTAL",
+        "BIG_ICON_DETAILS_SUBTOTAL",
+      ];
+      const value = prompt(
+        `Supported values for the data-layout parameter:
+        1 SMALL_ICON
+        2 SMALL_ICON_COUNTER
+        3 COUNTER_ONLY
+        4 TITLE_COUNTER
+        5 MEDIUM_ICON_COUNTER
+        6 MEDIUM_ICON_TITLE_COUNTER
+        7 BIG_ICON_TITLE_SUBTOTAL
+        8 BIG_ICON_DETAILS_SUBTOTAL
+
+        Input number from 1 to 8`,
+        "1"
+      );
+      bag.setAttribute("data-layout", parameters[Number(value) - 1]);
+    </script>
+    <div>
+      <script
+        data-cfasync="false"
+        type="text/javascript"
+        src="https://app.ecwid.com/script.js?9971537&data_platform=code"
+        charset="utf-8"
+      ></script>
+      <script>
+        Ecwid.init();
+      </script>
+    </div>
+  </body>
+</html>
